@@ -1,0 +1,143 @@
+/*background with a gradient*/
+
+body{
+  margin: 0;
+  padding: 0;
+  font-family: arial,sans-serif;
+
+  background: linear-gradient(to right, #4e54c8 , #8f94fb );
+  height: 100vh;
+  display: flex;
+
+  justify-content: center;
+  align-items: center;
+
+ 
+}
+/* centered form container with shadow*/
+
+.form-container{
+  background-color: white;
+  padding: 2rem;
+
+  border-radius: 10px;
+  box-shadow: o 10px 30px rgba(0, 0, 0, 0.1);
+  width: 400px;
+  text-align: center;
+
+  animation: fadeIn 1s ease-in-out;
+}
+/*title style*/
+
+h2{
+  margin-bottom: 1rem;
+  color: #333;
+}
+/* input fields*/
+
+input{
+  width: 100%;
+  padding: 0.75rem;
+  margin: 0.5rem 0;
+  border: 1px solid #ccc;
+  border-radius: 5px;
+  transition: all 0.3s ease-in-out;
+  outline: none;
+  background-color: transparent;
+  position: relative;
+}
+
+/* animated label above the input */
+
+.form-container label{
+  position: absolute;
+  left: 10px;
+  top: 16px;
+  color:#aaa;
+  font-size: 16px;
+  transition: all 0.3s ease-in-out;
+
+}
+/* when input is focused or has text, move the label above */
+
+input:focus + label , input:not(:placeholder-shown) + label{
+  top: -10px;
+  left: 5px;
+  font-size: 12px;
+  color: #4e54c8;
+}
+/* input field focus effect */
+input:focus{
+  border-color: #4e54c8;
+  box-shadow: 0 0 8px rgba(78,84,200,0.2);
+
+}
+
+/* error mesage styling*/
+
+.error{
+  color: black;
+  font-size: 14px;
+  margin-top: 0.5rem;
+  text-align: left;
+
+}
+
+/*submit button styling*/
+button{
+  width: 100%;
+  padding: 0.75rem;
+  background-color: #4e54c8;
+  color: white;
+  border: none;
+  border-radius: 5px;
+  font-size: 16px;
+  cursor: pointer;
+  transition: all 0.3s ease;
+  outline: none;
+  
+}
+
+/*submit button hover and animation effect*/
+
+button:hover{
+  background-color: #8f94fb;
+  transform: scale(1.05);
+  box-shadow: 0 4px 15px rgba(0,0,0,0.2);
+  
+}
+
+/*submit button animation*/
+
+button:active{
+  background-color:#3c41c6;
+  transform: scale(1);
+  
+}
+/* add pulse effect to the button*/
+button{
+  animation: pulse 1.5s infinite;
+}
+
+@keyframes pulse{
+  0%{
+    transform: scale(1);
+  }
+  50%{
+    transform: scale(1.05);
+    box-shadow: 0 0 15px rgba(0,0,0,0.2);
+  }
+  100%{
+    transform: scale(1);
+  }
+}
+@keyframes fadeIn{
+  form{
+    opacity: 0;
+    transform: translateY(-20px)
+  }
+  to{
+    opacity: 1;
+    transform: translateY(0);
+  }
+}
